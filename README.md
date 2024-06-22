@@ -1,5 +1,6 @@
 
-<img>![Sem título](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/3309d430-eb19-4599-85b9-7229533cd7ea)</img>
+<img>(https://github.com/BenficaS/Api_Ecomerce/assets/107698702/cb1c8655-43d9-44d7-8035-c99068202546)</img>
+tulo]()</img>
 Documentação da API E-commerce
 Introdução
 Este documento descreve a API de um sistema de e-commerce desenvolvido utilizando Spring Boot e Spring Security, que permite gerenciar usuários com diferentes papéis (ADMIN, GERENTE, VENDEDOR, CLIENTE) e implementa autenticação via tokens JWT (JSON Web Token).
