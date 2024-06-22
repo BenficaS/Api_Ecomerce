@@ -45,6 +45,4 @@ Authorization: Bearer <token_jwt>
 Retorna informações específicas do usuário com o papel GERENTE.
 </h4>
 <h1> Abaixo teremos um exemplo da autenticação pelo insominia.
-![imagem2](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/2980a1bd-5c31-453b-b0ee-da8f41a10905)
-![imagem](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/efb04892-45a7-49e6-b7df-fe4ed3ae458f)
 
