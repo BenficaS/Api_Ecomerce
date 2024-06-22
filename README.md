@@ -2,8 +2,8 @@
 <H2>Introdução
 Este documento descreve a API de um sistema de e-commerce desenvolvido utilizando Spring Boot e Spring Security, que permite gerenciar usuários com diferentes papéis (ADMIN, GERENTE, VENDEDOR, CLIENTE) e implementa autenticação via tokens JWT (JSON Web Token).</H2>
 
-Visão Geral da Estrutura
-O projeto é estruturado em três principais pacotes:
+<H1>Visão Geral da Estrutura
+O projeto é estruturado em três principais pacotes:</H1>
 
 com.example.Api_Ecomerce.application: Contém a classe principal ApiEcomerceApplication, responsável por inicializar a aplicação Spring Boot.
 com.example.Api_Ecomerce.config: Configurações de segurança (SecurityConfig) e beans necessários para autenticação e autorização.
