@@ -72,4 +72,49 @@ Esta documentação fornece uma visão abrangente da API de e-commerce desenvolv
 ![imagem](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/34ff0078-2914-484b-abd3-76cc39bb8b65)
 # Aqui a geração do token JWT validado.
 ![imagem2](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/3ea77d1e-bc4c-44e1-8525-d4e97eb810fd)
+```mermaid
+graph TD;
 
+    subgraph User_Operations
+        A1[Registra Usuário] --> B1[Autentica Usuário]
+        B1 --> C1[Extrai Papel de Usuário]
+        style A1 fill:#CCEEFF,stroke:#336699,stroke-width:2px,stroke-dasharray: 5, 5;
+        style B1 fill:#CCFFCC,stroke:#006600,stroke-width:2px,stroke-dasharray: 5, 5;
+        style C1 fill:#FFFFCC,stroke:#CCCC00,stroke-width:2px,stroke-dasharray: 5, 5;
+    end
+
+    subgraph Admin_Operations
+        D1[Exclui Usuário]
+        style D1 fill:#FFCCCC,stroke:#990000,stroke-width:2px,stroke-dasharray: 5, 5;
+    end
+
+    subgraph Manager_Operations
+        E1[Exclui Produto]
+        style E1 fill:#CCCCFF,stroke:#663399,stroke-width:2px,stroke-dasharray: 5, 5;
+    end
+
+    subgraph Seller_Operations
+        F1[Cria Produto]
+        style F1 fill:#99CCFF,stroke:#336699,stroke-width:2px,stroke-dasharray: 5, 5;
+    end
+
+    subgraph Customer_Operations
+        G1[Visualiza Produto]
+        style G1 fill:#CCFF99,stroke:#669900,stroke-width:2px,stroke-dasharray: 5, 5;
+    end
+
+    A[API de Autenticação] -->|Registra/Login| User_Operations
+    style A fill:#FFCC99,stroke:#FF6600,stroke-width:2px,stroke-dasharray: 5, 5;
+    User_Operations -->|Token JWT| H[JWT Service]
+    style H fill:#C2D1F0,stroke:#304269,stroke-width:2px,stroke-dasharray: 5, 5;
+    H -->|Autorização| Admin_Operations
+    H -->|Autorização| Manager_Operations
+    H -->|Autorização| Seller_Operations
+    H -->|Autorização| Customer_Operations
+    User_Operations -->|Acesso a Dados| I[MongoDB]
+    style I fill:#FFE5CC,stroke:#CC6600,stroke-width:2px,stroke-dasharray: 5, 5;
+    Admin_Operations -->|Acesso a Dados| I
+    Manager_Operations -->|Acesso a Dados| I
+    Seller_Operations -->|Acesso a Dados| I
+    Customer_Operations -->|Acesso a Dados| I
+```
