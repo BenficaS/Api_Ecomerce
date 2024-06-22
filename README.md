@@ -31,8 +31,6 @@ Autorização: Os endpoints estão protegidos com base nos papéis definidos (AD
 Exemplo de Uso
 Autenticação
 
-bash
-Copiar código
 POST /login
 {
     "nome": "gabriel",
@@ -40,9 +38,8 @@ POST /login
 }
 Retorna um token JWT que deve ser utilizado para acessar outros endpoints.
 Acesso a Recursos Protegidos
-
 sql
-Copiar código
+
 GET /gerente/{token}
 Authorization: Bearer <token_jwt>
 Retorna informações específicas do usuário com o papel GERENTE.
