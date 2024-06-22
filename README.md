@@ -67,8 +67,9 @@ Para mais detalhes e personalizações, consulte o código-fonte e os comentári
 
 Esta documentação fornece uma visão abrangente da API de e-commerce desenvolvida, destacando seus principais recursos, funcionalidades e instruções básicas para utilização e integração.
 
-# Aqui veremos exemplos funcionais da aplicação.
+# Aqui veremos exemplos funcionais da aplicação utilizando o insomnia.
+- Aqui temos a validação dos usuarios exemplo: Admin.
 ![imagem](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/34ff0078-2914-484b-abd3-76cc39bb8b65)
-
+# Aqui a geração do token JWT validado.
 ![imagem2](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/3ea77d1e-bc4c-44e1-8525-d4e97eb810fd)
 
