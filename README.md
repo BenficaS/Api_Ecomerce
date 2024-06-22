@@ -1,48 +1,68 @@
-<h1>Documentação da API E-commerce</H1>
-<H2>Introdução
-Este documento descreve a API de um sistema de e-commerce desenvolvido utilizando Spring Boot e Spring Security, que permite gerenciar usuários com diferentes papéis (ADMIN, GERENTE, VENDEDOR, CLIENTE) e implementa autenticação via tokens JWT (JSON Web Token).</H2>
+# API E-commerce - Documentação
 
-<H1>Visão Geral da Estrutura
-O projeto é estruturado em três principais pacotes:</H1>
+Este repositório contém uma API de e-commerce desenvolvida em Spring Boot, que oferece funcionalidades de autenticação segura usando tokens JWT e controle de acesso baseado em papéis de usuário. Abaixo está uma visão detalhada da estrutura, funcionalidades principais e como utilizar a API.
 
-<h4>h6com.example.Api_Ecomerce.application: Contém a classe principal ApiEcomerceApplication, responsável por inicializar a aplicação Spring Boot.
-com.example.Api_Ecomerce.config: Configurações de segurança (SecurityConfig) e beans necessários para autenticação e autorização.
-com.example.Api_Ecomerce.controller: Controladores REST que definem os endpoints da API e realizam a integração com o serviço (UserService).
-com.example.Api_Ecomerce.model: Modelos de dados utilizados na aplicação, como UserEntity, que representa um usuário do sistema.
-com.example.Api_Ecomerce.repository e com.example.Api_Ecomerce.security: Pacotes para futura expansão e melhor organização.
-Funcionalidades Principais
-Autenticação e Autorização
+---
 
-A autenticação é feita utilizando tokens JWT. O método generateToken da classe JwtUtil gera tokens com base no nome de usuário.
-O método extractUsername da mesma classe decodifica e verifica o token JWT para extrair o nome de usuário.
-Endpoints Principais
+## Estrutura do Projeto
 
-POST /login: Endpoint para autenticar usuários. Retorna um token JWT que deve ser utilizado para acessar outros endpoints.
-GET /nomeusuario/{token}: Endpoint para extrair o nome de usuário a partir de um token JWT.
-GET /gerente/{token} e /admin/{token}: Endpoints protegidos que requerem os papéis de GERENTE e ADMIN, respectivamente.
-Segurança
+O projeto está estruturado nos seguintes pacotes principais:
 
-Configurações de segurança (SecurityConfig) usando Spring Security para definir regras de autorização baseadas em papéis de usuário.
-Senhas são codificadas utilizando BCryptPasswordEncoder antes de serem armazenadas nos detalhes do usuário.
-Configuração e Uso
-Execução: A aplicação é iniciada executando a classe ApiEcomerceApplication.
-Autenticação: Para autenticar um usuário, deve-se enviar uma requisição POST para /login com um corpo contendo o nome de usuário e senha.
-Autorização: Os endpoints estão protegidos com base nos papéis definidos (ADMIN, GERENTE, VENDEDOR, CLIENTE) utilizando a anotação @Secured.
-Exemplo de Uso
-Autenticação
+- **`com.example.Api_Ecomerce.application`**: Contém a classe principal `ApiEcomerceApplication` que inicializa a aplicação Spring Boot.
+- **`com.example.Api_Ecomerce.config`**: Configurações de segurança (`SecurityConfig`) utilizando Spring Security para definir autorizações e autenticações.
+- **`com.example.Api_Ecomerce.controller`**: Controladores REST que definem os endpoints da API e integram com o serviço (`UserService`).
+- **`com.example.Api_Ecomerce.model`**: Modelos de dados, como `UserEntity`, representando entidades de usuário.
+- **`com.example.Api_Ecomerce.repository`**: Pacote destinado para futuras implementações de repositórios de dados.
+- **`com.example.Api_Ecomerce.security`**: Utilitários de segurança, incluindo a classe `JwtUtil` para geração e validação de tokens JWT.
 
-POST /login
-{
-    "nome": "gabriel",
-    "senha": "1"
-}
-Retorna um token JWT que deve ser utilizado para acessar outros endpoints.
+---
+
+## Funcionalidades Principais
+
+1. **Autenticação e Autorização**
+   - **POST `/login`**: Endpoint para autenticar usuários. Retorna um token JWT necessário para acessar recursos protegidos.
+   - **GET `/nomeusuario/{token}`**: Endpoint para extrair o nome de usuário a partir de um token JWT.
+
+2. **Endpoints Protegidos**
+   - **GET `/gerente/{token}`**: Acesso restrito a usuários com papel GERENTE.
+   - **GET `/admin/{token}`**: Acesso restrito a usuários com papel ADMIN.
+
+3. **Configuração de Segurança**
+   - Utiliza Spring Security para configurar políticas de segurança baseadas em papéis de usuário.
+   - Senhas são armazenadas de forma segura utilizando BCryptPasswordEncoder.
+
+---
+
+## Uso da API
+
+1. **Execução**
+   - Inicie a aplicação executando a classe `ApiEcomerceApplication`.
+
+2. **Autenticação**
+   - Para autenticar um usuário, envie uma requisição POST para `/login` com um corpo JSON contendo o nome de usuário e senha.
+
+   Exemplo de Requisição:
+   ```json
+   POST /login
+   {
+       "nome": "gabriel",
+       "senha": "1"
+   }
 Acesso a Recursos Protegidos
-sql
 
+Utilize o token JWT recebido para acessar os endpoints protegidos, como /gerente/{token} e /admin/{token}.
+Exemplo de Requisição:
+
+http
+Copiar código
 GET /gerente/{token}
 Authorization: Bearer <token_jwt>
-Retorna informações específicas do usuário com o papel GERENTE.
-</h4>
-<h1> Abaixo teremos um exemplo da autenticação pelo insominia.
+Exemplo de Integração
+Para integrar esta API em seu projeto, siga os passos acima para autenticar usuários e acessar os recursos protegidos conforme necessário.
 
+Considerações Finais
+Este projeto demonstra uma implementação robusta de segurança com Spring Boot e Spring Security, oferecendo autenticação via tokens JWT e controle de acesso baseado em papéis de usuário de forma eficaz.
+
+Para mais detalhes e personalizações, consulte o código-fonte e os comentários nos arquivos relevantes.
+
+Esta documentação fornece uma visão abrangente da API de e-commerce desenvolvida, destacando seus principais recursos, funcionalidades e instruções básicas para utilização e integração.
