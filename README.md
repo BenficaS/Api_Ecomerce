@@ -5,7 +5,7 @@ Este documento descreve a API de um sistema de e-commerce desenvolvido utilizand
 <H1>Visão Geral da Estrutura
 O projeto é estruturado em três principais pacotes:</H1>
 
-<h6>h6com.example.Api_Ecomerce.application: Contém a classe principal ApiEcomerceApplication, responsável por inicializar a aplicação Spring Boot.
+<h3>h6com.example.Api_Ecomerce.application: Contém a classe principal ApiEcomerceApplication, responsável por inicializar a aplicação Spring Boot.
 com.example.Api_Ecomerce.config: Configurações de segurança (SecurityConfig) e beans necessários para autenticação e autorização.
 com.example.Api_Ecomerce.controller: Controladores REST que definem os endpoints da API e realizam a integração com o serviço (UserService).
 com.example.Api_Ecomerce.model: Modelos de dados utilizados na aplicação, como UserEntity, que representa um usuário do sistema.
@@ -29,7 +29,7 @@ Execução: A aplicação é iniciada executando a classe ApiEcomerceApplication
 Autenticação: Para autenticar um usuário, deve-se enviar uma requisição POST para /login com um corpo contendo o nome de usuário e senha.
 Autorização: Os endpoints estão protegidos com base nos papéis definidos (ADMIN, GERENTE, VENDEDOR, CLIENTE) utilizando a anotação @Secured.
 Exemplo de Uso
-Autenticação</h6>
+Autenticação</h3>
 
 POST /login
 {
