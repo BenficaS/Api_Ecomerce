@@ -1,6 +1,6 @@
-Documentação da API E-commerce
-Introdução
-Este documento descreve a API de um sistema de e-commerce desenvolvido utilizando Spring Boot e Spring Security, que permite gerenciar usuários com diferentes papéis (ADMIN, GERENTE, VENDEDOR, CLIENTE) e implementa autenticação via tokens JWT (JSON Web Token).
+<h1>Documentação da API E-commerce</H1>
+<H2>Introdução
+Este documento descreve a API de um sistema de e-commerce desenvolvido utilizando Spring Boot e Spring Security, que permite gerenciar usuários com diferentes papéis (ADMIN, GERENTE, VENDEDOR, CLIENTE) e implementa autenticação via tokens JWT (JSON Web Token).</H2>
 
 Visão Geral da Estrutura
 O projeto é estruturado em três principais pacotes:
