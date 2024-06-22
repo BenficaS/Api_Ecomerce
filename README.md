@@ -72,6 +72,10 @@ Esta documentação fornece uma visão abrangente da API de e-commerce desenvolv
 ![imagem](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/34ff0078-2914-484b-abd3-76cc39bb8b65)
 # Aqui a geração do token JWT validado.
 ![imagem2](https://github.com/BenficaS/Api_Ecomerce/assets/107698702/3ea77d1e-bc4c-44e1-8525-d4e97eb810fd)
+
+
+#Abaixo segue um diagrama de funcionamento.
+- Ele serve para descrever a funcionalidade da api para facil entendimento.
 ```mermaid
 graph TD;
 
